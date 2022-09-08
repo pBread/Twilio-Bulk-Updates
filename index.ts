@@ -22,6 +22,7 @@ const limit = pRateLimit({
 
 (async () => {
   try {
+    // query the message records by phone number
     client.messages.each({ to: "+12223334444" }, (msg, done) => {
       limit(async () => {
         queued++;
